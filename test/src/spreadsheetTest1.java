@@ -3,6 +3,9 @@ import static org.junit.Assert.assertEquals;
 
 public class spreadsheetTest1 {
 
+    /**
+     * 每列默认值为空字符串
+     */
     @Test
     public void testThatCellsAreEmptyByDefault() {
         spreadsheet sheet = new spreadsheet();
@@ -10,6 +13,9 @@ public class spreadsheetTest1 {
         assertEquals("", sheet.get("ZX"));
     }
 
+    /**
+     * Excel可以正确地存储put的值
+     */
     @Test
     public void testThatTextCellsAreStored() {
         spreadsheet sheet = new spreadsheet();
@@ -25,6 +31,9 @@ public class spreadsheetTest1 {
         assertEquals("", sheet.get(theCell));
     }
 
+    /**
+     * Excel可以正确地覆盖之前的值
+     */
     @Test
     public void testThatManyCellsExist() {
         spreadsheet sheet = new spreadsheet();
@@ -42,6 +51,9 @@ public class spreadsheetTest1 {
         assertEquals("ZX same", "Third", sheet.get("ZX"));
     }
 
+    /**
+     * Excel可以正确识别纯数字，对于纯数字，将多余的空格去掉。
+     */
     @Test
     public void testThatNumericCellsAreIdentifiedAndStored() {
         spreadsheet sheet = new spreadsheet();
@@ -63,7 +75,9 @@ public class spreadsheetTest1 {
         assertEquals(" ", sheet.get(theCell));
     }
 
-
+    /**
+     * getLiteral需要返回未处理的纯字符串。
+     */
     @Test
     public void testThatWeHaveAccessToCellLiteralValuesForEditing() {
         spreadsheet sheet = new spreadsheet();

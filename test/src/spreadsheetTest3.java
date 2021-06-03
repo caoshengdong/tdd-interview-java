@@ -4,16 +4,11 @@ import static org.junit.Assert.assertEquals;
 
 public class spreadsheetTest3 {
 
+    /**
+     * Excel的等式应该正确地获取其他列的值
+     */
     @Test
-    public void testThatCellReferenceWorks () {
-        spreadsheet sheet = new spreadsheet();
-        sheet.put("A", "8");
-        sheet.put("B", "=A");
-        assertEquals("cell lookup", "8", sheet.get("B"));
-    }
-
-    @Test
-    public void testThatCellChangesPropagate () {
+    public void testThatCellReferenceWorks() {
         spreadsheet sheet = new spreadsheet();
         sheet.put("A", "8");
         sheet.put("B", "=A");
@@ -23,8 +18,12 @@ public class spreadsheetTest3 {
         assertEquals("cell change propagation", "9", sheet.get("B"));
     }
 
+
+    /**
+     * Excel的等式应该正确地计算包含其他列的值的等式
+     */
     @Test
-    public void testThatFormulasKnowCellsAndRecalculate () {
+    public void testThatFormulasKnowCellsAndRecalculate() {
         spreadsheet sheet = new spreadsheet();
         sheet.put("A", "8");
         sheet.put("B", "3");
@@ -35,8 +34,11 @@ public class spreadsheetTest3 {
         assertEquals("re-calculation", "18", sheet.get("E"));
     }
 
+    /**
+     * Excel的等式应该正确地获取其他列的值
+     */
     @Test
-    public void testThatDeepPropagationWorks () {
+    public void testThatDeepPropagationWorks() {
         spreadsheet sheet = new spreadsheet();
         sheet.put("A", "8");
         sheet.put("B", "=A");
@@ -48,8 +50,11 @@ public class spreadsheetTest3 {
         assertEquals("deep re-calculation", "6", sheet.get("D"));
     }
 
+    /**
+     * Excel的等式应该正确地处理复杂的计算。
+     */
     @Test
-    public void testThatFormulaWorksWithManyCells () {
+    public void testThatFormulaWorksWithManyCells() {
         spreadsheet sheet = new spreadsheet();
         sheet.put("A", "10");
         sheet.put("B", "=A+E");
@@ -64,8 +69,11 @@ public class spreadsheetTest3 {
         assertEquals("multiple expressions - H", "51", sheet.get("H"));
     }
 
+    /**
+     * 如果出现了循环引用，Excel应该提示。
+     */
     @Test
-    public void testThatCircularReferencesAdmitIt () {
+    public void testThatCircularReferencesAdmitIt() {
         spreadsheet sheet = new spreadsheet();
         sheet.put("A", "=A");
         assertEquals("Detect circularity", "#Circular", sheet.get("A"));
