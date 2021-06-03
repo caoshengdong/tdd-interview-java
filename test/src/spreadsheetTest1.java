@@ -59,19 +59,19 @@ public class spreadsheetTest1 {
         spreadsheet sheet = new spreadsheet();
         String theCell = "A";
 
-        sheet.put(theCell, "X99"); // "Obvious" string
+        sheet.put(theCell, "X99");
         assertEquals("X99", sheet.get(theCell));
 
-        sheet.put(theCell, "14"); // "Obvious" number
+        sheet.put(theCell, "14");
         assertEquals("14", sheet.get(theCell));
 
-        sheet.put(theCell, " 99 X"); // Whole string must be numeric
+        sheet.put(theCell, " 99 X");
         assertEquals(" 99 X", sheet.get(theCell));
 
-        sheet.put(theCell, " 1234 "); // Blanks ignored
+        sheet.put(theCell, " 1234 ");
         assertEquals("1234", sheet.get(theCell));
 
-        sheet.put(theCell, " "); // Just a blank
+        sheet.put(theCell, " ");
         assertEquals(" ", sheet.get(theCell));
     }
 
@@ -89,7 +89,7 @@ public class spreadsheetTest1 {
         sheet.put(theCell, " 1234 ");
         assertEquals(" 1234 ", sheet.getLiteral(theCell));
 
-        sheet.put(theCell, "=7"); // Foreshadowing formulas:)
+        sheet.put(theCell, "=7");
         assertEquals("=7", sheet.getLiteral(theCell));
     }
 
