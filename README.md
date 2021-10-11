@@ -3,7 +3,7 @@
 
 在这个笔试题目里，你将着手编写一个实现一些简易功能的Excel。
 
-本笔试题目为测试驱动，即：全部笔试题由20个测试案例组成，其对应文件位于/test/src目录下。其中，spreadsheetTest1.java包含5个，spreadsheetTest2.java包含10个，spreadsheetTest3.java包含5个，为了通过上述这20个测试案例，你需要逐步完善位于/model/src/目录下的spreadsheet.java文件的代码。
+本笔试题目为测试驱动，即：全部笔试题由20个测试案例组成，其对应文件位于`test/com/memect`目录下。其中，`SpreadsheetTest1.java`包含5个，`SpreadsheetTest2.java`包含10个，`SpreadsheetTest3.java`包含5个，为了通过上述这20个测试案例，你需要逐步完善位于`/src/com/memect/`目录下的spreadsheet.java文件的代码。
 
 
 - 请从第一个测试文件的第一个测试用例开始，逐步增添、重构excel的函数功能。测试案例的难度是从简到难。

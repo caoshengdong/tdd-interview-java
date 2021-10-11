@@ -1,14 +1,17 @@
+package com.memect;
+
+import com.memct.Spreadsheet;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-public class spreadsheetTest1 {
+public class SpreadsheetTest1 {
 
     /**
      * 每列默认值为空字符串
      */
     @Test
     public void testThatCellsAreEmptyByDefault() {
-        spreadsheet sheet = new spreadsheet();
+        Spreadsheet sheet = new Spreadsheet();
         assertEquals("", sheet.get("A"));
         assertEquals("", sheet.get("ZX"));
     }
@@ -18,7 +21,7 @@ public class spreadsheetTest1 {
      */
     @Test
     public void testThatTextCellsAreStored() {
-        spreadsheet sheet = new spreadsheet();
+        Spreadsheet sheet = new Spreadsheet();
         String theCell = "A";
 
         sheet.put(theCell, "A string");
@@ -36,7 +39,7 @@ public class spreadsheetTest1 {
      */
     @Test
     public void testThatManyCellsExist() {
-        spreadsheet sheet = new spreadsheet();
+        Spreadsheet sheet = new Spreadsheet();
         sheet.put("A", "First");
         sheet.put("X", "Second");
         sheet.put("ZX", "Third");
@@ -56,7 +59,7 @@ public class spreadsheetTest1 {
      */
     @Test
     public void testThatNumericCellsAreIdentifiedAndStored() {
-        spreadsheet sheet = new spreadsheet();
+        Spreadsheet sheet = new Spreadsheet();
         String theCell = "A";
 
         sheet.put(theCell, "X99");
@@ -80,7 +83,7 @@ public class spreadsheetTest1 {
      */
     @Test
     public void testThatWeHaveAccessToCellLiteralValuesForEditing() {
-        spreadsheet sheet = new spreadsheet();
+        Spreadsheet sheet = new Spreadsheet();
         String theCell = "A";
 
         sheet.put(theCell, "Some string");

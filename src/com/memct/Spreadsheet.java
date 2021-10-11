@@ -1,6 +1,8 @@
+package com.memct;
+
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-public class spreadsheet {
+public class Spreadsheet {
 
     /**
      * 该函数的目的是获取在column列的值，内容为等式的话需要计算并返回其结果。举例，若在"A1"列存储的值为"=7+3"，sheet.get("A1")应返回"10"。
